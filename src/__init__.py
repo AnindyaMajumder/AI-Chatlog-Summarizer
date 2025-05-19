@@ -1,4 +1,5 @@
 from chat_parser import ChatParser
+from text_analyzer import TextAnalyzer
 import os
 
 if __name__ == "__main__":
@@ -7,13 +8,9 @@ if __name__ == "__main__":
     data_dir = os.path.join(current_dir, 'data')
     chat_file = os.path.join(data_dir, 'chat.txt')
     
-    # Call the ChatParser class
+    print("\nBasic Summary:")    
     parser = ChatParser(chat_file)
-    
-    # Print the results
-    # print("Parsed chat messages:")
-    # print(parser.get_messages())
-    
-    # Print summary
-    print("\nSummary:")
     print(f"- The conversation had {parser.total_messages()} exchanges.")
+    
+    analyzer = TextAnalyzer(parser)
+    print(f"- Most common keywords: {analyzer.find_keywords()}") 
