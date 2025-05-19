@@ -41,6 +41,13 @@ requirements.txt          # Python dependencies
 
 1. **Add your chat logs**:  
    Place your `.txt` chat files in the `data/` directory. Each message should be prefixed with `User:` or `AI:`.
+    Example chat log format:
+    ```
+    User: Hi, can you tell me about Python?
+    AI: Sure! Python is a popular programming language known for its readability.
+    User: What can I use it for?
+    AI: You can use Python for web development, data analysis, AI, and more.
+    ```
 
 2. **Run the summarizer**:
 
