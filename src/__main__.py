@@ -1,5 +1,5 @@
-from chat_parser import ChatParser
-from text_analyzer import TextAnalyzer
+from src.chat_parser import ChatParser
+from src.text_analyzer import TextAnalyzer
 import os
 
 if __name__ == "__main__":
