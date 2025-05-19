@@ -10,6 +10,7 @@ class ChatParser:
     def __init__(self, file_path=None):
         self.file_path = file_path
         self.messages = {"User": [], "AI": []}
+        self.document = ""
         self.parse()
     
     def load_file(self):
@@ -31,14 +32,16 @@ class ChatParser:
             
             for speaker, message in matches:
                 clean_message = message.strip()
+                self.document += clean_message + "\n"
                 if clean_message:
                     self.messages[speaker].append(clean_message)
         else:
             raise ValueError("Failed to load file.")
     
     def get_messages(self):
-        return self.messages
+        return self.document
     
+    # Message Statistics
     def user_messages(self):
         return len(self.messages["User"])
 

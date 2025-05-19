@@ -13,4 +13,5 @@ if __name__ == "__main__":
     print(f"- The conversation had {parser.total_messages()} exchanges.")
     
     analyzer = TextAnalyzer(parser)
-    print(f"- Most common keywords: {analyzer.find_keywords()}") 
+    print(f"- The user asked mainly about {analyzer.conversation_topic()}.")
+    print(f"- Most common keywords: {analyzer.find_keywords()}.") 
