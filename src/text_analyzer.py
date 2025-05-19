@@ -54,6 +54,17 @@ class TextAnalyzer:
         top_keywords = [feature_names[i] for i in top_indices]
         return ", ".join(top_keywords)
     
+    def find_frequent_words(self, n=5):
+        lemmas = self.clean_text()
+        
+        word_counts = {}
+        for word in lemmas:
+            word_counts[word] = word_counts.get(word, 0) + 1
+
+        sorted_words = sorted(word_counts.items(), key=lambda x: x[1], reverse=True)
+        top_words = [word for word, count in sorted_words[:n]]
+        return ", ".join(top_words)
+    
     def conversation_topic(self):
         lemmas = self.clean_text()
         count_vec = CountVectorizer(analyzer=lambda x: x)
